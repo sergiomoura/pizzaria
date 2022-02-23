@@ -9,7 +9,7 @@
 </head>
 <body>
 	<link rel="stylesheet" href="/css/index.css">
-	<form action="/busca" method="get">
+	<form action="/pizzas/busca" method="get">
 		<input type="text" name="q" placeholder="Qual pizza você procura?" autocomplete="off" value="">
 		<button type="submit">Buscar</button>
 	</form>
@@ -24,7 +24,6 @@
 			<span>R$ <%= p.preco %></span>
 		</article>
 		<% } %>
-		
 	</main>
 
 	<!--
