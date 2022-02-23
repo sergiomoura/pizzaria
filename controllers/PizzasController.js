@@ -2,7 +2,7 @@ let pizzas = require('../database/Pizzas.json');
 
 module.exports = {
     listar: (req,res) => {
-        res.render('pizzas.ejs', {pizzas});
+        res.render('pizzas.ejs', {pizzas, busca:''});
     },
     mostrar: (req,res) => {
         let id = req.params.id;
