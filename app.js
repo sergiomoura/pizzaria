@@ -10,7 +10,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', PizzasRouter);
 
-app.get('/', (req,res) => {res.send("Olá, visitante")})
-
 app.listen(3000, ()=>{console.log("servidor rodando na porta 3000")});
 
