@@ -4,6 +4,18 @@ const express = require('express');
 // Criando a aplicação express
 const app = express();
 
+// Configurando a aplicação express para usar o EJS
+// como template engine
+app.set('view engine','ejs');
+
+//# Para configurar a pasta views em outro lugar que não
+//# seja o padrão
+// app.set('views',"caminho para pasta views")
+
+// Verificando se a requisição é para um arquivo da pasta public
+// caso seja, mande esse arquivo
+app.use(express.static("public"));
+
 // Importando o roteador que lida com as rotas de pizza
 const PizzasRouter = require('./routes/PizzasRouter')
 

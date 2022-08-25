@@ -5,7 +5,22 @@ const pizzas = require('../database/pizzas.json');
 module.exports = {
 
     index: (req, res) => {
-        res.send(pizzas);
+        res.render('index.ejs',{pizzas});
+    },
+
+    show: (req, res) => {
+        // Levantar o id que veio no parâmetro de rota
+        let id = req.params.id;
+
+        // Encontrar no array de pizzas a pizza
+        let pizza = pizzas.find(p=>p.id == id);
+
+        // Retornar a view pizza.ejs, a pizza encontrada
+        res.render('pizza.ejs',{pizza});
+    },
+
+    search: () => {
+
     }
 
 }

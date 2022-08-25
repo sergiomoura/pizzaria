@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sergiomoura/pizzaria#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.17.3"
   },
   "devDependencies": {
