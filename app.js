@@ -16,6 +16,7 @@ app.set('view engine','ejs');
 // caso seja, mande esse arquivo
 app.use(express.static("public"));
 
+
 // Importando o roteador que lida com as rotas de pizza
 const PizzasRouter = require('./routes/PizzasRouter')
 
