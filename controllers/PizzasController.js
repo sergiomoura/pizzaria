@@ -26,6 +26,11 @@ module.exports = {
         let pizzasFiltradas = pizzas.filter(p => p.nome.toLowerCase().includes(termoBuscado.toLowerCase()))
         // retornar a view index.ejs, passando para ela somente as pizzas filtradas
         res.render('index.ejs', { pizzas: pizzasFiltradas });
+    },
+
+    addCart: (req, res) => {
+        // res.send(req.body);
+        res.send("Aqui vou adicionar uma pizza ao carrinho..." + req.body.aEscolhida);
     }
 
 }

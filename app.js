@@ -24,14 +24,15 @@ app.use(
     })
 );
 
-// Declaração de middlewares globais
-app.use(RegistraHoraDeAcesso);
-
 // Verificando se a requisição é para um arquivo da pasta public
 // caso seja, mande esse arquivo
 app.use(express.static("public"));
 
+// Processa os formulários do tipo pos e organiza as info no req.body
+app.use(express.urlencoded({ extended: false }));
 
+// Declaração de middlewares globais
+app.use(RegistraHoraDeAcesso);
 
 // Importando o roteador que lida com as rotas de pizza
 const PizzasRouter = require('./routes/PizzasRouter')
