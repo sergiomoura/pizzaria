@@ -1,5 +1,7 @@
 // Importando o express
 const express = require('express');
+const session = require('express-session');
+
 const RegistraHoraDeAcesso = require('./middlewares/RegistraHoraDeAcesso');
 
 // Criando a aplicação express
@@ -12,6 +14,15 @@ app.set('view engine','ejs');
 //# Para configurar a pasta views em outro lugar que não
 //# seja o padrão
 // app.set('views',"caminho para pasta views")
+
+// DEFINIÇÃO DO MIDDLEWARE QUE CONFIGURA O COOKIE DA SESSION
+app.use(
+    session({
+        secret: 'CHAVE-SECRETA',
+        resave: false,
+        saveUninitialized: true
+    })
+);
 
 // Declaração de middlewares globais
 app.use(RegistraHoraDeAcesso);
