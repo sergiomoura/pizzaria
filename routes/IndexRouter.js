@@ -10,5 +10,9 @@ const IndexController = require('../controllers/IndexController');
 // Criando rota que encaminha requisição para o IndexController.index
 router.get('/', IndexController.index)
 
+// Criando rota que encaminha requisição para o IndexController.index
+router.get('/busca', IndexController.search)
+
+
 // Exportando o roteador
 module.exports = router;

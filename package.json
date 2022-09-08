@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon --ignore database/* app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/sergiomoura/pizzaria#readme",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-session": "^1.17.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

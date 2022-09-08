@@ -8,6 +8,15 @@ module.exports = {
     },
 
     show: (req, res) => {
-        res.render('show.ejs', {pizzas});
+
+        let {id} = req.params;
+        let pizzaID = pizzas.find(pizzas => pizzas.id == id);
+        
+        res.render('show', {pizzaID});
+    },
+
+    addCart: (req, res) => {
+        let {IdPizza} = req.body;
+        res.send ("TESTE " + IdPizza);
     }
 }
