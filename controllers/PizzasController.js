@@ -5,7 +5,16 @@ const pizzas = require('../database/pizzas.json');
 module.exports = {
 
     index: (req, res) => {
-        res.render('index.ejs',{ pizzas });
+
+        // Verificar se a session pizzas está setada.
+        // Caso esteja, levantar a quantidade de pizzas
+        // Caso não esteja, quantidade = 0
+        let quantidade = 0;
+        if(req.session.pizzas){
+            quantidade = req.session.pizzas.length;
+        }
+
+        res.render('index.ejs',{ pizzas, quantidade });
     },
 
     show: (req, res) => {
@@ -20,12 +29,18 @@ module.exports = {
     },
 
     search: (req, res) => {
+
+        let quantidade = 0;
+        if(req.session.pizzas){
+            quantidade = req.session.pizzas.length;
+        }
+
         // Levantar o trecho que está sendo buscado (req.query.q)
         let termoBuscado = req.query.q;
         // Filtrar as pizzas para obter somente as pizzas com esse trecho
         let pizzasFiltradas = pizzas.filter(p => p.nome.toLowerCase().includes(termoBuscado.toLowerCase()))
         // retornar a view index.ejs, passando para ela somente as pizzas filtradas
-        res.render('index.ejs', { pizzas: pizzasFiltradas });
+        res.render('index.ejs', { pizzas: pizzasFiltradas, quantidade });
     },
 
     addCart: (req, res) => {
@@ -44,6 +59,14 @@ module.exports = {
 
         console.log(req.session);
 
+    },
+
+    showCart: (req, res) => {
+
+        // Levantar do array de pizzas as pizzas que estão na session;
+
+        // Renderizar pizzas.ejs, passando as pizzas que estão no carrinho, e não os ids;
+        res.render("cart.ejs");
     }
 
 }

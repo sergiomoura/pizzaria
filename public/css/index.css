@@ -11,6 +11,23 @@
     min-width: 440px;
 }
 
+#form-busca a{
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+    color: #FFF;
+    text-decoration: none;
+    top: 10px;
+    right: 10px;
+    box-shadow: 0 0 10px 10px rgb(255, 81, 0);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #form-busca input {
     flex-grow: 1;
     padding: 10px;

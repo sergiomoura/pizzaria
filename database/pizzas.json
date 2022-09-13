@@ -10,7 +10,7 @@
         "preco": 38.5,
         "img": "/img/calabresa.jpg",
         "destaque": true,
-        "score": 10
+        "score": 11
     },
     {
         "id": 2,
@@ -23,7 +23,7 @@
         "preco": 48.55,
         "img": "/img/pepperoni.jpg",
         "destaque": false,
-        "score": 16
+        "score": 17
     },
     {
         "id": 3,
