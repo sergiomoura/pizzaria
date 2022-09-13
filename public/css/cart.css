@@ -22,6 +22,10 @@ div table td:first-child{
     padding: 1px;
 }
 
+div table td:nth-child(3){
+    text-align: center;
+}
+
 div table img {
     width: 100%;
     display: block;
