@@ -16,7 +16,12 @@ module.exports = {
     },
 
     addCart: (req, res) => {
-        let {IdPizza} = req.body;
-        res.send ("TESTE " + IdPizza);
+
+        //res.send ('Aqui vou adicionar uma pizza ao carrinho...' + req.body.aEscolhida);
+
+        req.session.pizzas ? req.session.pizzas.push(req.body.IdPizza) : req.session.pizzas = [req.body.IdPizza];
+
+        res.redirect('/');
+        console.log(req.session);
     }
 }
