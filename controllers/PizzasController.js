@@ -57,14 +57,20 @@ module.exports = {
         
         res.redirect('/pizzas');
 
-        console.log(req.session);
-
     },
 
     showCart: (req, res) => {
 
-        // Levantando as pizzas da session
-        let pizzasDoCarrinho = req.session.pizzas.map(id => pizzas.find(p => p.id == id));
+        // Definindo pizzasDoCarrinho como array inicialmente vazio
+        let pizzasDoCarrinho = [];
+
+        // Verificando se há pizzas na session
+        if(req.session.pizzas){
+
+            // Levantando as pizzas da session
+            pizzasDoCarrinho = req.session.pizzas.map(id => pizzas.find(p => p.id == id));
+        
+        }
 
         // Renderizar pizzas.ejs, passando as pizzas que estão no carrinho, e não os ids;
         res.render("cart.ejs", {pizzasDoCarrinho});

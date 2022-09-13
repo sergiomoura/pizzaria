@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/cart.css">
     
     <div>
+        <% if(pizzasDoCarrinho.length > 0){ %>
         <table>
             <% for(p of pizzasDoCarrinho) {%>
             <tr>
@@ -20,11 +21,14 @@
                     <img src="<%= p.img %>" alt="<%= p.nome %>">
                 </td>
                 <td><%= p.nome %></td>
+                <td>99</td>
                 <td>R$ <%= p.preco %></td>
             </tr>
             <% } %>
-    
         </table>
+        <% } else { %>
+            Nenhuma pizza no carrinho
+        <% } %>
     </div>
 </body>
 </html>
