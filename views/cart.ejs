@@ -11,14 +11,20 @@
 
 <body>
     <link rel="stylesheet" href="/css/cart.css">
-    <table>
-        <tr>
-            <td>
-                <img src="/img/calabresa.jpg2" alt="calabresa">
-            </td>
-            <td>Calabresa</td>
-            <td>R$ 45,00</td>
-        </tr>    
-    </table>
+    
+    <div>
+        <table>
+            <% for(p of pizzasDoCarrinho) {%>
+            <tr>
+                <td>
+                    <img src="<%= p.img %>" alt="<%= p.nome %>">
+                </td>
+                <td><%= p.nome %></td>
+                <td>R$ <%= p.preco %></td>
+            </tr>
+            <% } %>
+    
+        </table>
+    </div>
 </body>
 </html>

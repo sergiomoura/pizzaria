@@ -63,10 +63,11 @@ module.exports = {
 
     showCart: (req, res) => {
 
-        // Levantar do array de pizzas as pizzas que estão na session;
+        // Levantando as pizzas da session
+        let pizzasDoCarrinho = req.session.pizzas.map(id => pizzas.find(p => p.id == id));
 
         // Renderizar pizzas.ejs, passando as pizzas que estão no carrinho, e não os ids;
-        res.render("cart.ejs");
+        res.render("cart.ejs", {pizzasDoCarrinho});
     }
 
 }
