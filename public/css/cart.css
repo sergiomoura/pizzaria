@@ -22,11 +22,64 @@ div table td:first-child{
     padding: 1px;
 }
 
-div table td:nth-child(3){
-    text-align: center;
-}
-
 div table img {
     width: 100%;
     display: block;
+}
+
+#total {
+    display: block;
+    padding: 20px;
+    text-align: right;
+    font-size: 22px;
+}
+
+#linkEntrar {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    border-top: 1px dashed #333;
+    padding-top: 20px;
+    color: #FFF;
+}
+
+#formAddPedido {
+    border-top: 1px dashed #333;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+#formAddPedido label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#formAddPedido label span {
+    font-size: 12px;
+    display: block;
+}
+
+#formAddPedido label select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+#formAddPedido button {
+    border: none;
+    background-color: var(--cor-principal);
+    color: #FFF;
+    padding: 10px 20px;
+}
+
+#formAddPedido a{
+    color: rgb(6, 145, 177)
+}
+
+#formAddPedido footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed #333;
+    padding-top: 20px;
 }
