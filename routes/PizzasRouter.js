@@ -12,9 +12,10 @@ const pontuaPizza = require('../middlewares/pontuaPizza');
 // Criando rota que encaminha requisição para o PizzasController.index
 router.get('/', PizzasController.index)
 
+router.get('/carrinho', PizzasController.carrinho);
+
 // Criando rota que encaminha requisição para o PizzasController.index
 router.get('/:id', pontuaPizza, PizzasController.show);
-
 router.post('/addCart', PizzasController.addCart );
 
 
