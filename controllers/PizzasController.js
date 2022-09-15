@@ -73,8 +73,11 @@ module.exports = {
 
         let pizzasNoCarrinho = idsNoCarrinho.map(getPizzaById);
 
+        // Levantar se o usuário está logado
+        let usuarioLogado = (req.session.usuario !== undefined);
+
         // Renderizar pizzas.ejs, passando as pizzas que estão no carrinho, e não os ids;
-        res.render("cart.ejs", {pizzasNoCarrinho});
+        res.render("cart.ejs", {pizzasNoCarrinho, usuarioLogado});
     }
 
 }
