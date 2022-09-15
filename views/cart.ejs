@@ -11,14 +11,55 @@
 
 <body>
     <link rel="stylesheet" href="/css/cart.css">
-    <table>
-        <tr>
-            <td>
-                <img src="/img/calabresa.jpg2" alt="calabresa">
-            </td>
-            <td>Calabresa</td>
-            <td>R$ 45,00</td>
-        </tr>    
-    </table>
+    
+    <div>
+        <% if(pizzasNoCarrinho.length > 0){ %>
+        <table>
+            <% for(p of pizzasNoCarrinho) {%>
+            <tr>
+                <td>
+                    <img src="<%= p.img %>" alt="<%= p.nome %>">
+                </td>
+                <td><%= p.nome %></td>
+                <td>R$ <%= p.preco %></td>
+            </tr>
+            <% } %>
+        </table>
+        <span id="total">
+            Total: R$ 999,99
+        </span>
+
+        <a id="linkEntrar" href="/usuarios/entrar">Faça o login ou cadastre-se</a>
+
+        <form id="formAddPedido" action="/pizzas/addPedido" method="post">
+            <label>
+                <span>Endereço de Entrega:</span>
+                <select name="enderecoDeEntrega">
+                    <option value="0">Av Francisco Rodrigues Filho, 1902...</option>
+                    <option value="1">Av Francisco Rodrigues Filho, 1902...</option>
+                    <option value="2">Av Francisco Rodrigues Filho, 1902...</option>
+                    <option value="3">Av Francisco Rodrigues Filho, 1902...</option>
+                </select>
+                <a href="/usuarios/enderecos/add">Adicionar endereço</a>
+            </label>
+            <label>
+                <span>Forma de Pagamento:</span>
+                <select name="formaDePagamento">
+                    <option value="0">Pix</option>
+                    <option value="1">Master (final 9999)</option>
+                    <option value="1">Visa (final 8888)</option>                    
+                </select>
+                <a href="/usuarios/formasDePagamento/add">Adicionar forma de pagamento</a>
+            </label>
+            <footer>
+                <a href="/pizzas">Continuar comprando...</a>
+                <button type="submit">Finalizar Pedido</button>
+            </footer>
+        </form>
+
+        <% } else { %>
+            Nenhuma pizza no carrinho
+        <% } %>
+    </div>
 </body>
 </html>
