@@ -14,7 +14,7 @@
 
     <main>
 
-        <form action="/usuarios/login" id="formLogin">
+        <form method="post" action="/usuarios/login" id="formLogin">
             <h2>Faça Login</h2>
             <label>
                 <span>E-mail:</span>
@@ -29,7 +29,7 @@
             </div>
         </form>
 
-        <form action="/usuarios/add" id="formCadastrar">
+        <form method="post" action="/usuarios/add" id="formCadastrar">
             <h2>Cadastre-se</h2>
             <label>
                 <span>E-mail:</span>
@@ -51,8 +51,31 @@
                 <button type="submit">Cadastrar</button>
             </label>
         </form>
-
+        
     </main>
 </body>
 
 </html>
+<!-- 
+    Criar a rota post /usuarios/add
+    Fazer com que a rota encaminhe a req para UsuariosController.add
+
+    Criar a função UsuariosController.add...
+    Fazer com que a função add:
+        - Crie um usuário dentro de um arquivo usuarios.json
+        - Cria a req.session.usuario
+        - Direciona o usuario para o endereço /pizzas ou /pizzas/cart
+
+ -->
+
+<!-- 
+    Criar a rota post para /usuarios/login
+    Fazer com que a rota encaminhe a req para UsuariosController.login
+    Fazer com que a função login:
+        - Verificar se usuário e senha conferem
+        - Caso não esteja ok, voltar para tela de login com erro
+        - Caso esteja ok,
+            + criar a session req.session.usuario 
+            + direcionar o usuário para o endereço /pizzas ou /pizzas/cart
+
+ -->
