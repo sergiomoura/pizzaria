@@ -13,6 +13,7 @@ html{
 
 body {
 	margin: 0;
+	color:#FFF
 }
 
 body::before{
@@ -25,4 +26,34 @@ body::before{
 	background-size: cover;
 	z-index: -1;
 }
+
+form label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+form label span {
+    font-size: 12px;
+    display: block;
+}
+
+form label select,
+form label input[type="text"],
+form label input[type="email"],
+form label input[type="password"] {
+    display: block;
+    padding: 8px;
+    margin-bottom: 5px;
+	width: 100%;
+	font-size: 18px;
+}
+
+form button {
+    border: none;
+    background-color: var(--cor-principal);
+    color: #FFF;
+    padding: 10px 20px;
+	font-size: 18px;
+}
+
 

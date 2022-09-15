@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Fantástica></title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <link rel="stylesheet" href="/css/entrar.css">
+
+    <main>
+
+        <form action="/usuarios/login" id="formLogin">
+            <h2>Faça Login</h2>
+            <label>
+                <span>E-mail:</span>
+                <input type="email" name="email">
+            </label>
+            <label>
+                <span>Senha:</span>
+                <input type="password" name="senha">
+            </label>
+            <div class="controles">
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+
+        <form action="/usuarios/add" id="formCadastrar">
+            <h2>Cadastre-se</h2>
+            <label>
+                <span>E-mail:</span>
+                <input type="email" name="email">
+            </label>
+            <label>
+                <span>Senha:</span>
+                <input type="password" name="senha">
+            </label>
+            <label>
+                <span>Confirme Senha:</span>
+                <input type="password" name="confirmacao">
+            </label>
+            <label>
+                <span>Endereço:</span>
+                <input type="text" name="endereco">
+            </label>
+            <div class="controles">
+                <button type="submit">Cadastrar</button>
+            </label>
+        </form>
+
+    </main>
+</body>
+
+</html>
