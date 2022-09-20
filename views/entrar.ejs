@@ -28,7 +28,7 @@
                 <button type="submit">Entrar</button>
             </div>
         </form>
-
+        
         <form method="post" action="/usuarios/add" id="formCadastrar">
             <h2>Cadastre-se</h2>
             <label>
@@ -49,7 +49,12 @@
             </label>
             <div class="controles">
                 <button type="submit">Cadastrar</button>
-            </label>
+            </div>
+            <% if(erroNoCadastro){ %>
+            <div class="erro">
+                Falha ao cadastrar usuário. Verifique se a senha e a confirmação conferem.
+            </div>
+            <% } %>
         </form>
         
     </main>

@@ -49,7 +49,7 @@ module.exports = {
         // caso haja, basta adicionar ao array
         // caso não haja a gente cria um array
         
-        if(req.session.pizzas){
+        if(req.session.pizzas != undefined){
             req.session.pizzas.push(req.body.aEscolhida);
         } else {
             req.session.pizzas = [req.body.aEscolhida];
@@ -65,6 +65,7 @@ module.exports = {
 
         // Levantar do array de pizzas as pizzas que estão na session;
         // ["1" , "3"] ======> [{id:1, nome:"Pepperoni", preco:50}, {id:3, nome:"Fracatu", preco: 32}]
+
         let idsNoCarrinho = req.session.pizzas;
         
         let getPizzaById = (id) => {
